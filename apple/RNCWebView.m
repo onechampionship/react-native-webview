@@ -389,6 +389,7 @@ static NSDictionary* customCertificatesForHost;
   BOOL opaque = (alpha == 1.0);
 #if !TARGET_OS_OSX
   self.opaque = _webView.opaque = opaque;
+  _webView.opaque = false;
   _webView.scrollView.backgroundColor = backgroundColor;
   _webView.backgroundColor = backgroundColor;
 #else
