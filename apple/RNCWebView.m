@@ -242,6 +242,12 @@ static NSDictionary* customCertificatesForHost;
   if (_applicationNameForUserAgent) {
       wkWebViewConfig.applicationNameForUserAgent = [NSString stringWithFormat:@"%@ %@", wkWebViewConfig.applicationNameForUserAgent, _applicationNameForUserAgent];
   }
+    
+  if (@available(iOS 9.0, *)) {
+      wkWebViewConfig.allowsPictureInPictureMediaPlayback = NO;
+  } else {
+      // Fallback on earlier versions
+  }
   
   return wkWebViewConfig;
 }
